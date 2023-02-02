@@ -1,0 +1,264 @@
+@font-face {
+  font-family: quicksand;
+  src: url(../font/Quicksand-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: quicksand;
+}
+
+body {
+  background-color: #EEEEEE;
+}
+
+.header {
+  width: 100%;
+  background-image: url("../images/header pattern image.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header #logo {
+  margin-right: auto;
+  margin-left: 28px;
+}
+.header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header nav .menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header nav .menu li {
+  color: #3FD28B;
+  padding: 0 32px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.header nav .menu :nth-child(1) {
+  color: white;
+  margin: 19px 0;
+}
+.header nav .others {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header nav .others li {
+  padding: 0 32px;
+}
+
+.main-body {
+  margin: 32px;
+  padding-bottom: auto;
+}
+.main-body .course-class {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #8DDC97;
+  border-radius: 2px;
+}
+.main-body .course-class .course {
+  border-bottom: 4px solid #222222;
+}
+.main-body .course-class .course, .main-body .course-class .class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+.main-body .course-class .course .class-course-img, .main-body .course-class .class .class-course-img {
+  padding-right: 8px;
+}
+.main-body .course-class .course .s1, .main-body .course-class .class .s1 {
+  font-size: 24px;
+  padding-right: 8px;
+  font-weight: bold;
+}
+.main-body .course-class .course .s2, .main-body .course-class .class .s2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.main-body .course-class .course {
+  border-bottom: 4px solid #222222;
+}
+.main-body .divider {
+  border: 1px solid #d5d5d5;
+  margin-top: 17px;
+}
+.main-body .content {
+  margin: 16px 0;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(2, minmax(476px, 1fr));
+}
+.main-body .content .divider {
+  margin: 16px 24px;
+}
+.main-body .content div {
+  background-color: #FFFFFF;
+}
+.main-body .content .c1 .details, .main-body .content .c2 .details, .main-body .content .c3 .details, .main-body .content .c4 .details {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  padding: 24px 24px 0 0;
+}
+.main-body .content .c1 .details .image, .main-body .content .c2 .details .image, .main-body .content .c3 .details .image, .main-body .content .c4 .details .image {
+  padding: 0px 16px 0 24px;
+}
+.main-body .content .c1 .details .data, .main-body .content .c2 .details .data, .main-body .content .c3 .details .data, .main-body .content .c4 .details .data {
+  height: 100%;
+  align-content: space-between;
+}
+.main-body .content .c1 .details .data .acc, .main-body .content .c2 .details .data .acc, .main-body .content .c3 .details .data .acc, .main-body .content .c4 .details .data .acc {
+  display: flex;
+  justify-content: center;
+}
+.main-body .content .c1 .details .data .acc span, .main-body .content .c2 .details .data .acc span, .main-body .content .c3 .details .data .acc span, .main-body .content .c4 .details .data .acc span {
+  margin-right: auto;
+  font-size: 16px;
+}
+.main-body .content .c1 .details .data .acc img, .main-body .content .c2 .details .data .acc img, .main-body .content .c3 .details .data .acc img, .main-body .content .c4 .details .data .acc img {
+  height: 24px;
+  width: 20px;
+}
+.main-body .content .c1 .details .data .subj span, .main-body .content .c2 .details .data .subj span, .main-body .content .c3 .details .data .subj span, .main-body .content .c4 .details .data .subj span {
+  font-size: 12px;
+  color: #666666;
+}
+.main-body .content .c1 .details .data .subj span:nth-of-type(4), .main-body .content .c2 .details .data .subj span:nth-of-type(4), .main-body .content .c3 .details .data .subj span:nth-of-type(4), .main-body .content .c4 .details .data .subj span:nth-of-type(4) {
+  color: #1F7A54;
+}
+.main-body .content .c1 .details .data .subj span:nth-of-type(2), .main-body .content .c2 .details .data .subj span:nth-of-type(2), .main-body .content .c3 .details .data .subj span:nth-of-type(2), .main-body .content .c4 .details .data .subj span:nth-of-type(2) {
+  color: #d5d5d5;
+}
+.main-body .content .c1 .details .syllabus, .main-body .content .c2 .details .syllabus, .main-body .content .c3 .details .syllabus, .main-body .content .c4 .details .syllabus {
+  font-size: 12px;
+}
+.main-body .content .c1 .details .syllabus .no, .main-body .content .c2 .details .syllabus .no, .main-body .content .c3 .details .syllabus .no, .main-body .content .c4 .details .syllabus .no {
+  color: #222222;
+}
+.main-body .content .c1 .details .syllabus .text, .main-body .content .c2 .details .syllabus .text, .main-body .content .c3 .details .syllabus .text, .main-body .content .c4 .details .syllabus .text {
+  color: #666666;
+}
+.main-body .content .c1 .details .teacher, .main-body .content .c2 .details .teacher, .main-body .content .c3 .details .teacher, .main-body .content .c4 .details .teacher {
+  border-bottom: 1px solid #d5d5d5;
+}
+.main-body .content .c1 .details .teacher #teacher, .main-body .content .c2 .details .teacher #teacher, .main-body .content .c3 .details .teacher #teacher, .main-body .content .c4 .details .teacher #teacher {
+  font-size: 16px;
+  width: 100%;
+  margin-top: 18px;
+  height: 27px;
+  border: 0;
+  color: #222222;
+  font-weight: bold;
+}
+.main-body .content .c1 .details .teacher #teacher option, .main-body .content .c2 .details .teacher #teacher option, .main-body .content .c3 .details .teacher #teacher option, .main-body .content .c4 .details .teacher #teacher option {
+  color: #222222;
+  font-weight: bold;
+}
+.main-body .content .c1 .details .student-duration, .main-body .content .c2 .details .student-duration, .main-body .content .c3 .details .student-duration, .main-body .content .c4 .details .student-duration {
+  font-size: 12px;
+  color: #666666;
+  font-weight: 500;
+}
+.main-body .content .c1 .details .student-duration span:nth-child(2), .main-body .content .c2 .details .student-duration span:nth-child(2), .main-body .content .c3 .details .student-duration span:nth-child(2), .main-body .content .c4 .details .student-duration span:nth-child(2) {
+  padding: 0px 8px;
+  color: #d5d5d5;
+}
+.main-body .content .c1 .details-footer, .main-body .content .c2 .details-footer, .main-body .content .c3 .details-footer, .main-body .content .c4 .details-footer {
+  margin: 0px 24px 9px 16px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-body .content .c2 .details-footer img:nth-child(n+2):nth-child(-n+3) {
+  opacity: 0.4;
+}
+.main-body .content .c3 .details-footer img:nth-child(n+2):nth-child(-n+3) {
+  opacity: 0.4;
+}
+.main-body .content .c4 .details {
+  padding-top: 5px;
+}
+.main-body .content .c4 .details .data .acc img {
+  width: auto;
+  height: auto;
+  opacity: 10%;
+  fill: d5d5d5;
+}
+.main-body .content .c4 .expired {
+  font-weight: bold;
+  padding: 4px 7px 2px 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 10px;
+  color: #D80000;
+  background-color: #FFE4E6;
+}
+
+.main-footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+.main-footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 32px 0 16px;
+  font-size: 14px;
+  padding: 11px 85px;
+  margin-top: auto;
+}
+.main-footer .contact .aboutus, .main-footer .contact .contactus {
+  color: #1F7A54;
+  font-family: inherit;
+  font-weight: bold;
+}
+.main-footer .contact .divide {
+  padding: 0 4px;
+}
+.main-footer .footer {
+  background-color: #E0E1E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 0px;
+}
+.main-footer .footer .logo-footer {
+  margin-right: 16px;
+}
+.main-footer .footer .divider {
+  margin-right: 16px;
+}
+.main-footer .footer .copyright {
+  margin-right: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  color: #616161;
+}
+.main-footer .footer .zeus {
+  margin-right: 11px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: bold;
+  color: #616161;
+}
+.main-footer .footer .rights {
+  font-size: 12px;
+  font-weight: 400;
+  color: #616161;
+}/*# sourceMappingURL=dashboard.css.map */
