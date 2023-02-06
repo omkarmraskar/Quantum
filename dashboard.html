@@ -12,11 +12,11 @@
             <img src="icons/logo used in header.svg" alt="logo" id="logo">
             <nav>
                 <ul class="menu">
-                    <li>Dashboard</li>
-                    <li>Content</li>
-                    <li>Users</li>
-                    <li>Reports</li>
-                    <li>Admin</li>
+                    <li id="menu-1" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Dashboard</li>
+                    <li id="menu-2" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Content</li>
+                    <li id="menu-3" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Users</li>
+                    <li id="menu-4" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Reports</li>
+                    <li id="menu-5" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Admin</li>
                 </ul>
                 <ul class="others">
                     <li><img src="/icons/alerts.svg"></li>
@@ -25,22 +25,33 @@
                 </ul>
             </nav>
     </div>
+
     <div class="main-body">
         <div class="course-class">
-            <div class="course">
+            <div class="course underline" id="course-class-1" onclick="CourseClassHighlight(id, 'underline')">
                 <img class="class-course-img" src="/icons/courses.svg" alt="courses icon">
                 <span class="s1">4</span>
                 <span class="s2">Courses</span>
             </div>
-            <div class="class">
+            <div class="class underline" id="course-class-2" onclick="CourseClassHighlight(id, 'underline')" >
                 <img class="class-course-img" src="/icons/classes.svg" alt="classes icon">
                 <span class="s1">4</span>
                 <span class="s2">Classes</span>
             </div>
         </div>
+        <div class="show-sort">
+            <div class="show"><span>Showing 4 of 4 courses</span></div>
+            <div class="sort">
+                <span class="sort-label">Sort By:</span>
+                <select id="sort-select">
+                    <option value="Course-Name">Course Name</option>
+                </select>
+                <img src="icons/sort.svg" class="Asc-Dsc-Arrow">
+            </div>
+        </div>
         <div class="divider"></div>
         <div class="content">
-            <div class="c1">
+            <div class="card-1">
                 <div class="details">
                     <div class="image">
                         <img src="/images/imageMask-1.svg" alt="">
@@ -48,7 +59,7 @@
                     <div class="data">
                         <div class="acc">
                             <span>Acceleration</span>
-                            <img src="icons/favourite.svg">
+                            <img src="icons/favourite.svg" id="card-1-fav" onclick="favorite(id)">
                         </div>
                         <div class="subj">
                             <span>Physics</span>
@@ -81,13 +92,13 @@
                 </div>
                 <div class="divider"></div>
                 <div class="details-footer">
-                    <img src="icons/preview.svg">
-                    <img src="icons/manage course.svg">
-                    <img src="icons/grade submissions.svg">
-                    <img src="icons/reports.svg">
+                    <img src="icons/preview.svg" id="card-1-1" onclick="changeOpacity(id)">
+                    <img src="icons/manage course.svg" id="card-1-2" onclick="changeOpacity(id)">
+                    <img src="icons/grade submissions.svg" id="card-1-3" onclick="changeOpacity(id)">
+                    <img src="icons/reports.svg" id="card-1-4" onclick="changeOpacity(id)">
                 </div>
             </div>
-            <div class="c2">
+            <div class="card-2">
                 <div class="details">
                     <div class="image">
                         <img src="/images/imageMask-1.png" alt="">
@@ -95,7 +106,7 @@
                     <div class="data">
                         <div class="acc">
                             <span>Displacement, Velocity and Speed</span>
-                            <img src="icons/favourite.svg">
+                            <img src="icons/favourite.svg" id="card-2-fav" onclick="favorite(id)">
                         </div>
                         <div class="subj">
                             <span>Physics 2</span>
@@ -128,13 +139,13 @@
                 </div>
                 <div class="divider"></div>
                 <div class="details-footer">
-                    <img src="icons/preview.svg" id="preview">
-                    <img src="icons/manage course.svg" id="manage">
-                    <img src="icons/grade submissions.svg">
-                    <img src="icons/reports.svg">
+                    <img src="icons/preview.svg" id="card-2-1" onclick="changeOpacity(id)">
+                    <img src="icons/manage course.svg" id="card-2-2" onclick="changeOpacity(id)">
+                    <img src="icons/grade submissions.svg" id="card-2-3" onclick="changeOpacity(id)">
+                    <img src="icons/reports.svg" id="card-2-4" onclick="changeOpacity(id)">
                 </div>
             </div>
-            <div class="c3">
+            <div class="card-3">
                 <div class="details">
                     <div class="image">
                         <img src="/images/imageMask-3.png" alt="">
@@ -142,7 +153,7 @@
                     <div class="data">
                         <div class="acc">
                             <span>Introduction to Biology: Micro organisms and how they affec...</span>
-                            <img src="icons/favourite.svg">
+                            <img src="icons/favourite.svg" id="card-3-fav" onclick="favorite(id)">
                         </div>
                         <div class="subj">
                             <span>Biology</span>
@@ -173,13 +184,13 @@
                 </div>
                 <div class="divider"></div>
                 <div class="details-footer">
-                    <img src="icons/preview.svg">
-                    <img src="icons/manage course.svg">
-                    <img src="icons/grade submissions.svg">
-                    <img src="icons/reports.svg">
+                    <img src="icons/preview.svg" id="card-3-1" onclick="changeOpacity(id)">
+                    <img src="icons/manage course.svg" id="card-3-2" onclick="changeOpacity(id)">
+                    <img src="icons/grade submissions.svg" id="card-3-3" onclick="changeOpacity(id)">
+                    <img src="icons/reports.svg" id="card-3-4" onclick="changeOpacity(id)">
                 </div>
             </div>
-            <div class="c4">
+            <div class="card-4">
                 <div class="expired"><span>Expired</span></div>
                 <div class="details">
                     <div class="image">
@@ -188,7 +199,7 @@
                     <div class="data">
                         <div class="acc">
                             <span>Introduction to High School Mathematics</span>
-                            <img src="icons/unfavourite.svg">
+                            <img src="icons/favourite.svg" id="card-4-fav" onclick="favorite(id)">
                         </div>
                         <div class="subj">
                             <span>Mathematics</span>
@@ -221,10 +232,10 @@
                 </div>
                 <div class="divider"></div>
                 <div class="details-footer">
-                    <img src="icons/preview.svg">
-                    <img src="icons/manage course.svg">
-                    <img src="icons/grade submissions.svg">
-                    <img src="icons/reports.svg">
+                    <img src="icons/preview.svg" id="card-4-1" onclick="changeOpacity(id)">
+                    <img src="icons/manage course.svg" id="card-4-2" onclick="changeOpacity(id)">
+                    <img src="icons/grade submissions.svg" id="card-4-3" onclick="changeOpacity(id)">
+                    <img src="icons/reports.svg" id="card-4-4" onclick="changeOpacity(id)">
                 </div>
             </div>
         </div>
@@ -244,5 +255,38 @@
             <span class="rights">All rights Reserved</span>
         </div>
     </div>
+    <script>
+        function changeOpacity(id) {
+            var x = document.getElementById(id);
+            x.classList.toggle("opacityChange")
+            
+        }
+
+        function favorite(id){
+            var x = document.getElementById(id);
+            x.classList.toggle("opacityChange")
+            
+        }
+
+        function CourseClassHighlight(id, clas){
+            var x = document.getElementById(id);
+            var y = document.getElementsByClassName(clas);
+            for(let i=0; i<y.length; i++){
+                y[i].style.borderBottom = "4px solid #eeeeee";
+            }
+            x.style.borderBottom = "4px solid #222222";
+        }
+
+        function menuHighlight(id, clas){
+            var x = document.getElementById(id);
+            var y = document.getElementsByClassName(clas);
+            for(let i=0; i<y.length; i++){
+                y[i].style.borderBottom = "0";
+                y[i].style.color= "#3FD28B";
+            }
+            x.style.borderBottom = "4px solid #ffffff";
+            x.style.color= "white";
+        }
+    </script>
 </body>
 </html>
