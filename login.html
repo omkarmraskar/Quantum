@@ -26,18 +26,24 @@
                     </div>
                 
                     <div class="state-selector">
-                        <div class="state"><label for="state" class="state">State*</label></div>
-                        <div>
+                        <div class="state-district">
+                            <label for="state" class="state">State*</label>
+                        </div>
+                        <div class="dropdown">
                             <select id="state">
-                                <option value="alabama" class="option">Alabama</option>
-                                <option value="alabama" class="option">Alabama</option>
-                                <option value="alabama" class="option">Alabama</option>
-                                <option value="alabama" class="option">Alabama</option>
+                                <div class="options">
+                                    <option value="alabama" class="option">Alabama</option>
+                                    <option value="alabama" class="option">Alabama</option>
+                                    <option value="alabama" class="option">Alabama</option>
+                                    <option value="alabama" class="option">Alabama</option>
+                                </div>
                             </select>
                         </div>
                     
-                        <div><label for="district" class="district">District*</label></div>
-                        <div>
+                        <div class="state-district">
+                            <label for="district" class="district">District*</label>
+                        </div>
+                        <div class="dropdown">
                             <select id="school">
                                 <option value="alabama school district" class="option">Alabama school district</option>
                                 <option value="alabama school district" class="option">Alabama school district</option>
@@ -48,12 +54,12 @@
                     </div>
 
                     <div class="email">
-                        <input type="text" placeholder="Username/Email ID*">
+                        <input type="text" placeholder="Username/Email ID" required>
                     </div>
                     <div><a href="#" class="forgot"><span>FORGOT USERNAME?</span></a></div>
                     <div class="div-pwd">
-                        <input type="password" name="pwd" id="pwd" placeholder="Password*">
-                        <img src="icons/preview.svg" alt="" id="showpwd">
+                        <input type="password" name="pwd" id="pwd" placeholder="Password*" required>
+                        <img src="icons/preview.svg" alt="" id="showpwd" onclick="myFunction()" style="fill: #1F7A54;">
                     </div>
                     <div><a href="#" class="forgot"><span>FORGOT PASSWORD?</span></a></div>
                     <div class="remember">
@@ -78,5 +84,22 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pwd");
+            var y = document.getElementById("showpwd")
+            if (x.type === "password") {
+                x.type = "text";
+                y.src = "icons/visibility_off.svg"
+
+            } else {
+                x.type = "password";
+                y.src="icons/preview.svg"
+                
+            }
+        }
+    </script>
 </body>
 </html>

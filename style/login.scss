@@ -7,6 +7,7 @@
     margin:0;
     padding:0;
     font-family: quicksand, sans-serif;
+    font-weight: 600;
 }
 html, body{
     background-color: #eeeeee;
@@ -16,6 +17,10 @@ html, body{
 .container{
     .header{
             background-image: url("../images/header\ pattern\ image.png");
+            #logo{
+                padding: 10px 0;
+                padding-left: 24px;
+            }
         }
     .form{
         box-sizing: border-box;
@@ -48,26 +53,34 @@ html, body{
                 .school-type{
                     display: flex;
                     font-size: 16px;
-                    font-weight: medium;
+                    font-weight: 600;
                     margin-bottom: 25px;
                     .radio{
                         margin-right: 8px;
-                        
+                        accent-color: #1F7A54;
+                        width: 20px;
                     }
                     .radio-school{
                         margin-left: 32px;
                     }
                 }
                 .state-selector {
-                    .state .district{
-                        font-size:12px;
+                    .state-district{
+                        .state, .district{
+                            font-size: 12px;
+                            color: #666666;
+                        }
                     }
-                    div #state, div #school{
-                        width: 424px;
-                        height: 25px;
-                        border: 0px;
-                        border-bottom: 1px solid #eee;
-                        margin-bottom: 36px;
+                    .dropdown{
+                        border-radius: 10px;
+                        #state, #school{
+                            font-size: 16px;
+                            width: 424px;
+                            height: 25px;
+                            border: 0px;
+                            border-bottom: 1px solid #eee;
+                            margin-bottom: 36px;
+                        }
                     }
                 }
                 .email {
@@ -100,6 +113,7 @@ html, body{
                         font-size: 16px;
                         font-weight: 500;
                     }
+
                 }
                 .remember{
                     display: flex;
@@ -108,8 +122,15 @@ html, body{
                     font-weight: 500;
                     margin-bottom: 34px;
                     .remember-text{
+            
+                        align-items: center;
                         margin-left: 5px;
-                        font-size: 14px;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    input[type=checkbox]{
+                        accent-color: #1F7A54;
+                        width: 24px;
                     }
                 }
                 .btn{
