@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/dashboard.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/dashboard.css">
+    <script src="js/dashboard.js"></script>
+    <title>Dashboard</title>
 </head>
 <body>
     <div class="header">
             <img src="icons/logo used in header.svg" alt="logo" id="logo">
             <nav>
-                <ul class="menu">
+                <ul class="menu" id="menu">
                     <li id="menu-1" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Dashboard</li>
                     <li id="menu-2" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Content</li>
                     <li id="menu-3" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Users</li>
@@ -19,9 +20,22 @@
                     <li id="menu-5" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Admin</li>
                 </ul>
                 <ul class="others">
-                    <li><img src="/icons/alerts.svg"></li>
-                    <li><img src="/icons/announcements.svg"></li>
-                    <li><img src=""></li>
+                    <li>
+                        <span class="alert-group" current-count="1">
+                            <img src="/icons/alerts.svg">
+                        </span>
+                    </li>
+                    <li>
+                        <span class="anouncement-group" current-count="1">
+                            <img src="/icons/announcements.svg">
+                        </span>
+                    </li>    
+                    <li>
+                        <span class="profile-group" current-badge="T">
+                            <img src="icons/user.png">
+                        </span>
+                    </li>
+                    <li ><img src="icons/hamburger-menu.svg" id="burger-icon" onclick="toggleMenu('menu')"></li>
                 </ul>
             </nav>
     </div>
@@ -50,192 +64,194 @@
             </div>
         </div>
         <div class="divider"></div>
-        <div class="content">
-            <div class="card-1">
-                <div class="details">
-                    <div class="image">
-                        <img src="/images/imageMask-1.svg" alt="">
+        <div class="content-container">
+            <div class="content">
+                <div class="card-1">
+                    <div class="details">
+                        <div class="image">
+                            <img src="/images/imageMask-1.svg" alt="">
+                        </div>
+                        <div class="data">
+                            <div class="name">
+                                <span>Acceleration</span>
+                                <img src="icons/favourite.svg" id="card-1-fav" onclick="favorite(id)">
+                            </div>
+                            <div class="subj">
+                                <span>Physics</span>
+                                <span>|</span>
+                                <span>Grade 7</span>
+                                <span>+2</span>
+                            </div>
+                            <div class="syllabus">
+                                <span class="no">4</span>
+                                <span class="text">Units</span>
+                                <span class="no">18</span>
+                                <span class="text">Lessons</span>
+                                <span class="no">24</span>
+                                <span class="text">Topics</span>
+                            </div>
+                            <div class="teacher">
+                                <select id="teacher">
+                                    <option value="No Classes">No Classes</option>
+                                    <option value="Mr. Frank's Class A" selected>Mr. Frank's Class A</option>
+                                    <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
+                                    <option value="All Classes">All Classes</option>
+                                </select>
+                            </div>
+                            <dive class="student-duration">
+                                <span>50 Students</span>
+                                <span>|</span>
+                                <span>21-Jan-2020 - 21-Aug-2020</span>
+                            </dive>
+                        </div>
                     </div>
-                    <div class="data">
-                        <div class="acc">
-                            <span>Acceleration</span>
-                            <img src="icons/favourite.svg" id="card-1-fav" onclick="favorite(id)">
-                        </div>
-                        <div class="subj">
-                            <span>Physics</span>
-                            <span>|</span>
-                            <span>Grade 7</span>
-                            <span>+2</span>
-                        </div>
-                        <div class="syllabus">
-                            <span class="no">4</span>
-                            <span class="text">Units</span>
-                            <span class="no">18</span>
-                            <span class="text">Lessons</span>
-                            <span class="no">24</span>
-                            <span class="text">Topics</span>
-                        </div>
-                        <div class="teacher">
-                            <select id="teacher">
-                                <option value="No Classes">No Classes</option>
-                                <option value="Mr. Frank's Class A" selected>Mr. Frank's Class A</option>
-                                <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
-                                <option value="All Classes">All Classes</option>
-                            </select>
-                        </div>
-                        <dive class="student-duration">
-                            <span>50 Students</span>
-                            <span>|</span>
-                            <span>21-Jan-2020 - 21-Aug-2020</span>
-                        </dive>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="details-footer">
-                    <img src="icons/preview.svg" id="card-1-1" onclick="changeOpacity(id)">
-                    <img src="icons/manage course.svg" id="card-1-2" onclick="changeOpacity(id)">
-                    <img src="icons/grade submissions.svg" id="card-1-3" onclick="changeOpacity(id)">
-                    <img src="icons/reports.svg" id="card-1-4" onclick="changeOpacity(id)">
-                </div>
-            </div>
-            <div class="card-2">
-                <div class="details">
-                    <div class="image">
-                        <img src="/images/imageMask-1.png" alt="">
-                    </div>
-                    <div class="data">
-                        <div class="acc">
-                            <span>Displacement, Velocity and Speed</span>
-                            <img src="icons/favourite.svg" id="card-2-fav" onclick="favorite(id)">
-                        </div>
-                        <div class="subj">
-                            <span>Physics 2</span>
-                            <span>|</span>
-                            <span>Grade 6</span>
-                            <span>+3</span>
-                        </div>
-                        <div class="syllabus">
-                            <span class="no">2</span>
-                            <span class="text">Units</span>
-                            <span class="no">15</span>
-                            <span class="text">Lessons</span>
-                            <span class="no">20</span>
-                            <span class="text">Topics</span>
-                        </div>
-                        <div class="teacher">
-                            <select id="teacher">
-                                <option value="No Classes" selected>No Classes</option>
-                                <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
-                                <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
-                                <option value="All Classes">All Classes</option>
-                            </select>
-                        </div>
-                        <!-- <div class="student-duration">
-                            <span>50 Students</span>
-                            <span>|</span>
-                            <span>21-Jan-2020 - 21-Aug-2020</span>
-                        </div> -->
+                    <div class="divider"></div>
+                    <div class="details-footer">
+                        <img src="icons/preview.svg" id="card-1-1" onclick="changeOpacity(id)">
+                        <img src="icons/manage course.svg" id="card-1-2" onclick="changeOpacity(id)">
+                        <img src="icons/grade submissions.svg" id="card-1-3" onclick="changeOpacity(id)">
+                        <img src="icons/reports.svg" id="card-1-4" onclick="changeOpacity(id)">
                     </div>
                 </div>
-                <div class="divider"></div>
-                <div class="details-footer">
-                    <img src="icons/preview.svg" id="card-2-1" onclick="changeOpacity(id)">
-                    <img src="icons/manage course.svg" id="card-2-2" onclick="changeOpacity(id)">
-                    <img src="icons/grade submissions.svg" id="card-2-3" onclick="changeOpacity(id)">
-                    <img src="icons/reports.svg" id="card-2-4" onclick="changeOpacity(id)">
-                </div>
-            </div>
-            <div class="card-3">
-                <div class="details">
-                    <div class="image">
-                        <img src="/images/imageMask-3.png" alt="">
+                <div class="card-2">
+                    <div class="details">
+                        <div class="image">
+                            <img src="/images/imageMask-1.png" alt="">
+                        </div>
+                        <div class="data">
+                            <div class="name">
+                                <span>Displacement, Velocity and Speed</span>
+                                <img src="icons/favourite.svg" id="card-2-fav" onclick="favorite(id)">
+                            </div>
+                            <div class="subj">
+                                <span>Physics 2</span>
+                                <span>|</span>
+                                <span>Grade 6</span>
+                                <span>+3</span>
+                            </div>
+                            <div class="syllabus">
+                                <span class="no">2</span>
+                                <span class="text">Units</span>
+                                <span class="no">15</span>
+                                <span class="text">Lessons</span>
+                                <span class="no">20</span>
+                                <span class="text">Topics</span>
+                            </div>
+                            <div class="teacher">
+                                <select id="teacher">
+                                    <option value="No Classes" selected>No Classes</option>
+                                    <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
+                                    <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
+                                    <option value="All Classes">All Classes</option>
+                                </select>
+                            </div>
+                            <!-- <div class="student-duration">
+                                <span>50 Students</span>
+                                <span>|</span>
+                                <span>21-Jan-2020 - 21-Aug-2020</span>
+                            </div> -->
+                        </div>
                     </div>
-                    <div class="data">
-                        <div class="acc">
-                            <span>Introduction to Biology: Micro organisms and how they affec...</span>
-                            <img src="icons/favourite.svg" id="card-3-fav" onclick="favorite(id)">
-                        </div>
-                        <div class="subj">
-                            <span>Biology</span>
-                            <span>|</span>
-                            <span>Grade 4</span>
-                            <span>+1</span>
-                        </div>
-                        <div class="syllabus">
-                            <span class="no">5</span>
-                            <span class="text">Units</span>
-                            <span class="no">16</span>
-                            <span class="text">Lessons</span>
-                            <span class="no">22</span>
-                            <span class="text">Topics</span>
-                        </div>
-                        <div class="teacher">
-                            <select id="teacher">
-                                <option value="No Classes">No Classes</option>
-                                <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
-                                <option value="Mr. Frank's Class B" selected>Mr. Frank's Class B</option>
-                                <option value="All Classes">All Classes</option>
-                            </select>
-                        </div>
-                        <dive class="student-duration">
-                            <span>300 Students</span>
-                        </dive>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="details-footer">
-                    <img src="icons/preview.svg" id="card-3-1" onclick="changeOpacity(id)">
-                    <img src="icons/manage course.svg" id="card-3-2" onclick="changeOpacity(id)">
-                    <img src="icons/grade submissions.svg" id="card-3-3" onclick="changeOpacity(id)">
-                    <img src="icons/reports.svg" id="card-3-4" onclick="changeOpacity(id)">
-                </div>
-            </div>
-            <div class="card-4">
-                <div class="expired"><span>Expired</span></div>
-                <div class="details">
-                    <div class="image">
-                        <img src="/images/imageMask-2.png" alt="">
-                    </div>
-                    <div class="data">
-                        <div class="acc">
-                            <span>Introduction to High School Mathematics</span>
-                            <img src="icons/favourite.svg" id="card-4-fav" onclick="favorite(id)">
-                        </div>
-                        <div class="subj">
-                            <span>Mathematics</span>
-                            <span>|</span>
-                            <span>Grade 8</span>
-                            <span>+3</span>
-                        </div>
-                        <!-- <div class="syllabus">
-                            <span class="no">4</span>
-                            <span class="text">Units</span>
-                            <span class="no">18</span>
-                            <span class="text">Lessons</span>
-                            <span class="no">24</span>
-                            <span class="text">Topics</span>
-                        </div> -->
-                        <div class="teacher">
-                            <select id="teacher">
-                                <option value="No Classes">No Classes</option>
-                                <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
-                                <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
-                                <option value="All Classes" selected>All Classes</option>
-                            </select>
-                        </div>
-                        <dive class="student-duration">
-                            <span>44 Students</span>
-                            <span>|</span>
-                            <span>21-Jan-2020 - 21-Aug-2020</span>
-                        </dive>
+                    <div class="divider"></div>
+                    <div class="details-footer">
+                        <img src="icons/preview.svg" id="card-2-1" onclick="changeOpacity(id)">
+                        <img src="icons/manage course.svg" id="card-2-2" onclick="changeOpacity(id)">
+                        <img src="icons/grade submissions.svg" id="card-2-3" onclick="changeOpacity(id)">
+                        <img src="icons/reports.svg" id="card-2-4" onclick="changeOpacity(id)">
                     </div>
                 </div>
-                <div class="divider"></div>
-                <div class="details-footer">
-                    <img src="icons/preview.svg" id="card-4-1" onclick="changeOpacity(id)">
-                    <img src="icons/manage course.svg" id="card-4-2" onclick="changeOpacity(id)">
-                    <img src="icons/grade submissions.svg" id="card-4-3" onclick="changeOpacity(id)">
-                    <img src="icons/reports.svg" id="card-4-4" onclick="changeOpacity(id)">
+                <div class="card-3">
+                    <div class="details">
+                        <div class="image">
+                            <img src="/images/imageMask-3.png" alt="">
+                        </div>
+                        <div class="data">
+                            <div class="name">
+                                <span>Introduction to Biology: Micro organisms and how they affec...</span>
+                                <img src="icons/favourite.svg" id="card-3-fav" onclick="favorite(id)">
+                            </div>
+                            <div class="subj">
+                                <span>Biology</span>
+                                <span>|</span>
+                                <span>Grade 4</span>
+                                <span>+1</span>
+                            </div>
+                            <div class="syllabus">
+                                <span class="no">5</span>
+                                <span class="text">Units</span>
+                                <span class="no">16</span>
+                                <span class="text">Lessons</span>
+                                <span class="no">22</span>
+                                <span class="text">Topics</span>
+                            </div>
+                            <div class="teacher">
+                                <select id="teacher">
+                                    <option value="No Classes">No Classes</option>
+                                    <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
+                                    <option value="Mr. Frank's Class B" selected>Mr. Frank's Class B</option>
+                                    <option value="All Classes">All Classes</option>
+                                </select>
+                            </div>
+                            <dive class="student-duration">
+                                <span>300 Students</span>
+                            </dive>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="details-footer">
+                        <img src="icons/preview.svg" id="card-3-1" onclick="changeOpacity(id)">
+                        <img src="icons/manage course.svg" id="card-3-2" onclick="changeOpacity(id)">
+                        <img src="icons/grade submissions.svg" id="card-3-3" onclick="changeOpacity(id)">
+                        <img src="icons/reports.svg" id="card-3-4" onclick="changeOpacity(id)">
+                    </div>
+                </div>
+                <div class="card-4">
+                    <div class="expired"><span>Expired</span></div>
+                    <div class="details">
+                        <div class="image">
+                            <img src="/images/imageMask-2.png" alt="">
+                        </div>
+                        <div class="data">
+                            <div class="name">
+                                <span>Introduction to High School Mathematics</span>
+                                <img src="icons/favourite.svg" id="card-4-fav" onclick="favorite(id)">
+                            </div>
+                            <div class="subj">
+                                <span>Mathematics</span>
+                                <span>|</span>
+                                <span>Grade 8</span>
+                                <span>+3</span>
+                            </div>
+                            <!-- <div class="syllabus">
+                                <span class="no">4</span>
+                                <span class="text">Units</span>
+                                <span class="no">18</span>
+                                <span class="text">Lessons</span>
+                                <span class="no">24</span>
+                                <span class="text">Topics</span>
+                            </div> -->
+                            <div class="teacher">
+                                <select id="teacher">
+                                    <option value="No Classes">No Classes</option>
+                                    <option value="Mr. Frank's Class A">Mr. Frank's Class A</option>
+                                    <option value="Mr. Frank's Class B">Mr. Frank's Class B</option>
+                                    <option value="All Classes" selected>All Classes</option>
+                                </select>
+                            </div>
+                            <dive class="student-duration">
+                                <span>44 Students</span>
+                                <span>|</span>
+                                <span>21-Jan-2020 - 21-Aug-2020</span>
+                            </dive>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="details-footer">
+                        <img src="icons/preview.svg" id="card-4-1" onclick="changeOpacity(id)">
+                        <img src="icons/manage course.svg" id="card-4-2" onclick="changeOpacity(id)">
+                        <img src="icons/grade submissions.svg" id="card-4-3" onclick="changeOpacity(id)">
+                        <img src="icons/reports.svg" id="card-4-4" onclick="changeOpacity(id)">
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,38 +271,5 @@
             <span class="rights">All rights Reserved</span>
         </div>
     </div>
-    <script>
-        function changeOpacity(id) {
-            var x = document.getElementById(id);
-            x.classList.toggle("opacityChange")
-            
-        }
-
-        function favorite(id){
-            var x = document.getElementById(id);
-            x.classList.toggle("opacityChange")
-            
-        }
-
-        function CourseClassHighlight(id, clas){
-            var x = document.getElementById(id);
-            var y = document.getElementsByClassName(clas);
-            for(let i=0; i<y.length; i++){
-                y[i].style.borderBottom = "4px solid #eeeeee";
-            }
-            x.style.borderBottom = "4px solid #222222";
-        }
-
-        function menuHighlight(id, clas){
-            var x = document.getElementById(id);
-            var y = document.getElementsByClassName(clas);
-            for(let i=0; i<y.length; i++){
-                y[i].style.borderBottom = "0";
-                y[i].style.color= "#3FD28B";
-            }
-            x.style.borderBottom = "4px solid #ffffff";
-            x.style.color= "white";
-        }
-    </script>
 </body>
 </html>

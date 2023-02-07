@@ -32,12 +32,15 @@ body{
         
         @include justifyCenter();
         .menu{
+            text-transform: uppercase;
             list-style: none;
-            @include justifyCenter();
+            display: flex;
+            justify-self: end;
             li{
-                // font-family: inherit;
+                
                 color: #3FD28B;
-                padding: 19px 32px;
+                padding: 19px 0;
+                margin-right: 32px;
                 font-size: 14px;
                 font-weight: bold;
             }
@@ -50,7 +53,81 @@ body{
             list-style: none;
             @include justifyCenter();
             li{
-                padding: 0 32px;
+                margin-right: 32px;
+                position: relative;
+                .alert-group, .anouncement-group{
+                    position: relative;
+                    color: #FFFFFF;
+                }
+                .alert-group::after, .anouncement-group::after{
+                    content: attr(current-count);
+                    position: absolute;
+                    top: -15px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #2A7FF3;
+                    @include justifyCenter();
+                    font-size: 12px;
+                }
+                
+                .profile-group{
+                    position: relative;
+                    
+                }
+                .profile-group::after{
+                    content: attr(current-badge);
+                    position: absolute;
+                    top: -20px;
+                    right: -8px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: white;
+                    @include justifyCenter();
+                    font-size: 12px;
+                }
+                #burger-icon{
+                    display: none;
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px ){
+    .header {
+        nav{
+            flex-direction: column-reverse;
+            position: relative;
+            .menu{
+                display: none;
+                li{
+                    display: block; width: 100%; height: 100%;
+                    text-align: center;
+                    font-size: 2.5rem;
+                    z-index: 2;
+                }
+            }
+            .others{
+                li{
+                    #burger-icon{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .main-body{
+        .content-container{
+            @include justifyCenter();
+            .content{
+                display: grid;
+                grid-gap: 24px;
+                max-width: 576px;
+                grid-template-columns: repeat(auto-fit, minmax(auto-fit, 576px));
             }
         }
     }
@@ -131,122 +208,121 @@ body{
     .divider{
         border: 1px solid #d5d5d5;
     }
-    .content{
-        margin: 16px 0;
-        display: grid;
-        grid-gap: 24px;
-        justify-content: flex-end;
-        grid-template-columns: repeat(auto-fit, minmax(468px, 1fr));
-        @media screen and (max-width: 1040px){
-            max-width: 576px;
-            grid-template-columns: repeat(auto-fit, minmax(476px, 571px));
-        }
-        .divider{
-            margin: 16px 24px;
+    .content-container{
+        .content{
+            margin: 16px 0;
+            display: grid;
+            grid-gap: 24px;
+            justify-content: flex-end;
+            grid-template-columns: repeat(auto-fit, minmax(476px, 1fr));
 
-        }
-        div{
-            background-color: #FFFFFF;
-        }
-            .card-1, .card-2, .card-3, .card-4{
-                .details{
-                    font-weight: bold;
-                    display: grid;
-                    grid-template-columns: auto 1fr;
-                    align-items: flex-start;
-                    padding: 24px 24px 0 0;
-                    .image{
-                        padding: 0px 16px 0 24px;
-                    }
-                    .data{
-                        height: 100%;
-                        align-content: space-between;
-                        .acc{
-                            display: flex;
-                            justify-content: center;
-                            span{
-                                margin-right: auto;
-                                font-size: 16px;
+            .divider{
+                margin: 16px 24px;
+    
+            }
+            div{
+                background-color: #FFFFFF;
+            }
+                .card-1, .card-2, .card-3, .card-4{
+                    .details{
+                        font-weight: bold;
+                        display: grid;
+                        grid-template-columns: auto 1fr;
+                        align-items: flex-start;
+                        padding: 24px 24px 0 0;
+                        .image{
+                            padding: 0px 16px 0 24px;
+                        }
+                        .data{
+                            height: 100%;
+                            align-content: space-between;
+                            .name{
+                                display: flex;
+                                justify-content: center;
+                                span{
+                                    margin-right: auto;
+                                    font-size: 16px;
+                                }
+                                img{
+                                    height: 24px;
+                                    width: 20px;
+                                }
                             }
-                            img{
-                                height: 24px;
-                                width: 20px;
+                            .subj{
+                                span{
+                                    font-size: 12px;
+                                    color: #666666;
+                                }
+                                span:nth-of-type(4){
+                                    color:#1F7A54;
+                                }
+                                span:nth-of-type(2){
+                                    color:#d5d5d5;
+                                }
                             }
                         }
-                        .subj{
-                            span{
-                                font-size: 12px;
+                        .syllabus{
+                            font-size: 12px;
+                            .no{
+                                color: #222222;
+                            }
+                            .text{
                                 color: #666666;
                             }
-                            span:nth-of-type(4){
-                                color:#1F7A54;
-                            }
-                            span:nth-of-type(2){
-                                color:#d5d5d5;
-                            }
                         }
-                    }
-                    .syllabus{
-                        font-size: 12px;
-                        .no{
-                            color: #222222;
-                        }
-                        .text{
-                            color: #666666;
-                        }
-                    }
-                    .teacher{
-                        border-bottom:1px solid #d5d5d5;
-                        #teacher{
-                            font-size: 16px;
-                            width: 100%;
-                            margin-top: 18px;
-                            height: 27px;
-                            border: 0;
-                            color: #222222;
-                            font-weight: bold;
-                            option{
+                        .teacher{
+                            border-bottom:1px solid #d5d5d5;
+                            #teacher{
+                                font-size: 16px;
+                                width: 100%;
+                                margin-top: 18px;
+                                height: 27px;
+                                border: 0;
                                 color: #222222;
                                 font-weight: bold;
+                                option{
+                                    color: #222222;
+                                    font-weight: bold;
+                                }
+                            }   
+                        }
+                        .student-duration{
+                            font-size: 12px;
+                            color: #666666;
+                            font-weight: 500;
+                            span:nth-child(2){
+                                padding: 0px 8px;
+                                color: #d5d5d5;
                             }
-                        }   
-                    }
-                    .student-duration{
-                        font-size: 12px;
-                        color: #666666;
-                        font-weight: 500;
-                        span:nth-child(2){
-                            padding: 0px 8px;
-                            color: #d5d5d5;
                         }
                     }
+                    .details-footer{
+                        margin: 0px 24px 9px 16px;
+                        padding: 0 24px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
                 }
-                .details-footer{
-                    margin: 0px 24px 9px 16px;
-                    padding: 0 24px;
-                    display: flex;
-                    justify-content: space-between;
+            
+            .card-4{
+                .details{
+                   padding-top: 5px;
                 }
-            }
-        
-        .card-4{
-            .details{
-               padding-top: 5px;
-            }
-            .expired{
-                font-weight: bold;
-                padding: 4px 7px 2px 5px;
-                width: fit-content;
-                font-size: 10px;
-                color: #D80000;
-                background-color: #FFE4E6;
+                .expired{
+                    font-weight: bold;
+                    padding: 4px 7px 2px 5px;
+                    width: fit-content;
+                    font-size: 10px;
+                    color: #D80000;
+                    background-color: #FFE4E6;
+                }
             }
         }
     }
 }
 
 .main-footer{
-    // position: fixed;
+
     width: 100vw;
     bottom: 0;
     .contact{
