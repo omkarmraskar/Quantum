@@ -16,13 +16,16 @@
 }
 body{
     background-color: #EEEEEE;
+    min-height: 100vh;
 }
 .header{
     width: 100%;
-    background-image: url("../images/header\ pattern\ image.png");
+    background: url("../images/header\ pattern\ svg.svg");
+    background-color: #25313F;
     @include justifyCenter();
-
     #logo{
+        display: flex;
+        align-items: flex-start;
         margin-right: auto;
         margin-left: 28px;
         padding: 10px 0;
@@ -97,7 +100,7 @@ body{
     }
 }
 
-@media screen and (max-width: 900px ){
+@media screen and (max-width: 900px){
     .header {
         nav{
             flex-direction: column-reverse;
@@ -120,6 +123,8 @@ body{
             }
         }
     }
+}
+@media screen and (max-width: 998px) {
     .main-body{
         .content-container{
             @include justifyCenter();
@@ -151,15 +156,15 @@ body{
             @include justifyCenter();
             padding-top: 18px;
             padding-bottom: 14px;
-            .class-course-img{
+            .course-class-img{
                 padding-right: 8px;
             }
-            .s1{
+            .course-class-count{
                 font-size: 24px;
                 padding-right: 8px;
                 font-weight: bold;
             }
-            .s2{
+            .course-class-name{
                 font-size: 16px;
                 font-weight: bold;
             }
@@ -214,7 +219,7 @@ body{
             display: grid;
             grid-gap: 24px;
             justify-content: flex-end;
-            grid-template-columns: repeat(auto-fit, minmax(476px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 
             .divider{
                 margin: 16px 24px;
@@ -223,7 +228,7 @@ body{
             div{
                 background-color: #FFFFFF;
             }
-                .card-1, .card-2, .card-3, .card-4{
+                div{
                     .details{
                         font-weight: bold;
                         display: grid;
@@ -303,26 +308,26 @@ body{
                         justify-content: space-between;
                     }
                 }
-            
-            .card-4{
-                .details{
-                   padding-top: 5px;
+                .Expired{
+                    .details{
+                       padding-top: 5px;
+                    }
+                    .expired{
+                        font-weight: bold;
+                        padding: 4px 7px 2px 5px;
+                        width: fit-content;
+                        font-size: 10px;
+                        color: #D80000;
+                        background-color: #FFE4E6;
+                    }
                 }
-                .expired{
-                    font-weight: bold;
-                    padding: 4px 7px 2px 5px;
-                    width: fit-content;
-                    font-size: 10px;
-                    color: #D80000;
-                    background-color: #FFE4E6;
-                }
-            }
         }
     }
 }
 
 .main-footer{
-
+    position: sticky;
+    top: 100%;
     width: 100vw;
     bottom: 0;
     .contact{
@@ -344,9 +349,7 @@ body{
     }
     .footer{
         background-color: #E0E1E1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include justifyCenter();
         height: 40px;
         margin-bottom: 0px;
         .logo-footer{

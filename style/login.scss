@@ -12,11 +12,12 @@
 html, body{
     background-color: #eeeeee;
     display: grid;
-    height: 100%;
+    height: 100vh;
 }
 .container{
     .header{
             background-image: url("../images/header\ pattern\ image.png");
+            background-color: #27313F;
             #logo{
                 padding: 10px 0;
                 padding-left: 24px;
@@ -149,9 +150,8 @@ html, body{
         }
     }
     .main-footer{
-        width: 100vw;
-        position: fixed;
-        bottom: 0;
+        position: sticky;
+        top: 100%;
         .contact{
             display: flex;
             justify-content: center;
