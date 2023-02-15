@@ -7,37 +7,57 @@
     <link rel="stylesheet" href="style/dashboard.css">
     <link rel="shortcut icon" href="#">
     <script src="js/dashboard.js"></script>
-    <script src="js/card.js"></script>
+    <script type="module" src="js/card.js"></script>
+    <script type="module" src="js/dom.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
     <div class="header">
             <img src="icons/logo used in header.svg" alt="logo" id="logo">
             <nav>
-                <ul class="menu" id="menu">
+                <ul class="menu menu-portrait menu-landscape" id="menu">
                     <li id="menu-1" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Dashboard</li>
                     <li id="menu-2" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Content</li>
                     <li id="menu-3" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Users</li>
                     <li id="menu-4" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Reports</li>
                     <li id="menu-5" class="menu-common" onclick="menuHighlight(id, 'menu-common')">Admin</li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <img src="icons/hamburger-menu.svg" id="burger-icon">
+                </div>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="nav-items">
+                      <li>DASHBOARD</li>
+                      <li>CONTENT
+                        <ul class="sub-menu">COURSE CATALOG</ul>
+                      </li>
+                      <li>USERS
+                        <ul id="u1" class="sub-menu">USER 1</ul>
+                      </li>
+                      <li>REPORTS
+                        <ul class="sub-menu">REPORT 1</ul>
+                      </li>
+                      <li>ADMIN
+                        <ul class="sub-menu">ADMIN</ul>
+                      </li>
+                    </div>
+                </div>
                 <ul class="others">
                     <li>
-                        <span class="alert-group" current-count="1">
+                        <div class="alert-group" current-count="1">
                             <img src="icons/alerts.svg">
-                        </span>
+                        </div>
                     </li>
                     <li>
-                        <span class="anouncement-group" current-count="1">
+                        <div class="anouncement-group" current-count="1">
                             <img src="icons/announcements.svg">
-                        </span>
+                        </div>
                     </li>    
                     <li>
-                        <span class="profile-group" current-badge="T">
+                        <div class="profile-group" current-badge="T">
                             <img src="icons/user.png">
-                        </span>
+                        </div>
                     </li>
-                    <li ><img src="icons/hamburger-menu.svg" id="burger-icon" onclick="toggleMenu('menu')"></li>
                 </ul>
             </nav>
     </div>
@@ -46,12 +66,12 @@
         <div class="course-class">
             <div class="course underline" id="course-class-1" onclick="CourseClassHighlight(id, 'underline')">
                 <img class="course-class-img" src="icons/courses.svg" alt="courses icon">
-                <span class="course-class-count">4</span>
+                <span class="course-class-count course-count">4</span>
                 <span class="course-class-name">Courses</span>
             </div>
             <div class="class underline" id="course-class-2" onclick="CourseClassHighlight(id, 'underline')" >
                 <img class="course-class-img" src="icons/classes.svg" alt="classes icon">
-                <span class="course-class-count">4</span>
+                <span class="course-class-count class-count">4</span>
                 <span class="course-class-name">Classes</span>
             </div>
         </div>
@@ -67,7 +87,7 @@
         </div>
         <div class="divider"></div>
         <div class="content-container">
-            <div class="content">
+            <div class="content" id="cards">
 
             </div>
         </div>

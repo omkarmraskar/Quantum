@@ -26,12 +26,3 @@ function menuHighlight(id, clas) {
     x.style.borderBottom = "4px solid #ffffff";
     x.style.color = "white";
 }
-function toggleMenu(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === 'block') {
-        x.style.display = 'none';
-    }
-    else {
-        x.style.display = 'block';
-    }
-}

@@ -32,24 +32,76 @@ body{
         padding-left: 24px;
     }
     nav{
-        
         @include justifyCenter();
         .menu{
             text-transform: uppercase;
             list-style: none;
             display: flex;
             justify-self: end;
-            li{
-                
-                color: #3FD28B;
-                padding: 19px 0;
-                margin-right: 32px;
-                font-size: 14px;
-                font-weight: bold;
+            @media screen and (min-width: 899px){
+                li{  
+                    color: #3FD28B;
+                    padding: 19px 0;
+                    margin-right: 32px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                :nth-child(1){
+                    color: white;
+                    border-bottom: 4px solid #ffffff;
+                }
             }
-            :nth-child(1){
-                color: white;
-                border-bottom: 4px solid #ffffff;
+        }
+        div{
+            #burger-icon{
+                display: none;
+            }
+        }
+        #hamburger-menu{
+            width: 280px;
+            height: fit-content;
+            position: absolute;
+            top: 50px;
+            margin-top: 0px;
+            margin-right: 16px;
+            right: 0;
+            background-color: #FFFFFF;
+            box-shadow: 0px 13px 20px #0000003D;
+            border-radius: 2px;
+            cursor: pointer;
+            .nav-items {
+                list-style: none;
+                letter-spacing: 1px;
+                display: none;
+                flex-direction: column;
+                color: #1F7A54;
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                line-height: 2em;
+                width: 100%;
+                padding: 0;
+                li {
+                    display: block;
+                    font-weight: 600;
+                    padding:15px 0 15px 16px ;
+                    width: -webkit-fill-available;
+                    .sub-menu {
+                        display: none;
+                        margin: 0;
+                        padding: 16px 0 8px 16px;
+                    }
+                }
+                li:hover {
+                        background-color: #F3F3F3;
+                        .sub-menu{
+                            display: block;
+
+                        }
+                }
+            }
+            .show {
+                @include justifyCenter();
             }
         }
         .others{
@@ -62,10 +114,22 @@ body{
                     position: relative;
                     color: #FFFFFF;
                 }
-                .alert-group::after, .anouncement-group::after{
+                .alert-group::after{
                     content: attr(current-count);
                     position: absolute;
-                    top: -15px;
+                    top: -10px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #2A7FF3;
+                    @include justifyCenter();
+                    font-size: 12px;
+                }
+                .anouncement-group::after{
+                    content: attr(current-count);
+                    position: absolute;
+                    top: -10px;
                     right: -10px;
                     width: 20px;
                     height: 20px;
@@ -82,8 +146,8 @@ body{
                 .profile-group::after{
                     content: attr(current-badge);
                     position: absolute;
-                    top: -20px;
-                    right: -8px;
+                    top: -6px;
+                    right: -6px;
                     width: 20px;
                     height: 20px;
                     border-radius: 50%;
@@ -91,9 +155,7 @@ body{
                     @include justifyCenter();
                     font-size: 12px;
                 }
-                #burger-icon{
-                    display: none;
-                }
+                
                 
             }
         }
@@ -103,26 +165,41 @@ body{
 @media screen and (max-width: 900px){
     .header {
         nav{
-            flex-direction: column-reverse;
             position: relative;
+            flex-direction: row-reverse;
             .menu{
+                position: absolute;
                 display: none;
+                top: 50px;
+                right: 16px;
+                z-index: 2;
+                width: 280px; 
+                height: 100%;
+                box-sizing: border-box;
+                filter: drop-shadow(16px 16px 16px #0000003D);
+                border-radius: 2px;
+                
                 li{
-                    display: block; width: 100%; height: 100%;
-                    text-align: center;
-                    font-size: 2.5rem;
-                    z-index: 2;
+                    box-sizing: border-box;
+                    background-color: white;
+                    display: block; 
+                    padding: 15px 0px 15px 15px;
+                    color: black;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #1F7A54;
                 }
             }
-            .others{
-                li{
-                    #burger-icon{
-                        display: block;
-                    }
+            div{
+                #burger-icon{
+                    display: block;
+                    margin-right: 24px;
                 }
             }
         }
     }
+    
 }
 @media screen and (max-width: 998px) {
     .main-body{
@@ -223,7 +300,6 @@ body{
 
             .divider{
                 margin: 16px 24px;
-    
             }
             div{
                 background-color: #FFFFFF;
@@ -254,6 +330,7 @@ body{
                                 }
                             }
                             .subj{
+                                padding-bottom: 7px;
                                 span{
                                     font-size: 12px;
                                     color: #666666;
@@ -263,6 +340,7 @@ body{
                                 }
                                 span:nth-of-type(2){
                                     color:#d5d5d5;
+                                    padding: 0 8px;
                                 }
                             }
                         }
@@ -294,7 +372,8 @@ body{
                         .student-duration{
                             font-size: 12px;
                             color: #666666;
-                            font-weight: 500;
+                            font-weight: 600;
+                            margin-top: 8px;
                             span:nth-child(2){
                                 padding: 0px 8px;
                                 color: #d5d5d5;
@@ -380,4 +459,8 @@ body{
 }
 .opacityChange{
     opacity: 0.3;
+}
+
+.show {
+    display: flex;
 }
