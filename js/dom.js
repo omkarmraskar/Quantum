@@ -6,16 +6,17 @@ hamburger.addEventListener("mouseover", function () {
     toogle.classList.add("open");
     var menu = document.querySelector(".nav-items");
     menu.classList.add("show");
+    menu.setAttribute("open", "");
 });
 var removemenu;
 var hamburgerOut = document.getElementById("hamburger-menu");
-var navItems = document.querySelector(".nav-items");
-hamburgerOut.addEventListener("mouseout", function () {
+hamburger.addEventListener("click", function () {
     removemenu = setTimeout(function () {
         var toogle = document.querySelector("#burger-icon");
         toogle.classList.add("open");
         var menu = document.querySelector(".nav-items");
         menu.classList.remove("show");
+        menu.removeAttribute("open");
     }, 400);
 });
 clearTimeout(removemenu);
@@ -25,8 +26,7 @@ alert.addEventListener("mouseover", function () {
     var menu = document.querySelector("#alert_wrapper");
     // menu.style.display = "block";
     menu.classList.add("show_block");
-    var alert_list = document.querySelector("#alert_list");
-    alert_list.classList.add("show");
+    menu.setAttribute("open", "");
 });
 function removealertmenu() {
     setTimeout(function () {
@@ -34,7 +34,8 @@ function removealertmenu() {
         // menu.style.display = "none";
         alert.style.filter = "none";
         menu.classList.remove("show_block");
-        var alert_list = document.querySelector("#alert_list");
+        menu.removeAttribute("open");
+        var alert_list = document.querySelector("#alert-list");
         alert_list.classList.remove("show");
     }, 100);
 }
@@ -53,8 +54,7 @@ announcement.addEventListener("mouseover", function () {
     var menu = document.querySelector("#announcement_wrapper");
     // menu.style.display = "block";
     menu.classList.add("show_block");
-    var announcement_list = document.querySelector("#announcement_list");
-    announcement_list.classList.add("show");
+    menu.setAttribute("open", "");
 });
 function remvoveannouncementmenu() {
     setTimeout(function () {
@@ -62,6 +62,7 @@ function remvoveannouncementmenu() {
         // menu.style.display = "none";
         announcement.style.filter = "none";
         menu.classList.remove("show_block");
+        menu.removeAttribute("open");
         var announcement_list = document.querySelector("#announcement_list");
         announcement_list.classList.remove("show");
     }, 400);

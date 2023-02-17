@@ -1,3 +1,5 @@
+
+
 const hamburger = document.getElementById("burger-icon") as HTMLDivElement;
 hamburger.addEventListener("mouseover", () => {
   const toogle = document.querySelector("#burger-icon");
@@ -27,8 +29,7 @@ hamburger.addEventListener("click", () => {
    const menu = document.querySelector("#alert_wrapper") as HTMLDivElement;
    // menu.style.display = "block";
      menu.classList.add("show_block");
-     const alert_list = document.querySelector("#alert-list")as HTMLDivElement;
-     alert_list.classList.add("show");
+     menu.setAttribute("open", "");
    
  })
 function removealertmenu(){
@@ -37,6 +38,7 @@ function removealertmenu(){
         // menu.style.display = "none";
         alert.style.filter ="none";
         menu.classList.remove("show_block");
+        menu.removeAttribute("open");
         const alert_list = document.querySelector("#alert-list")as HTMLDivElement;
         alert_list.classList.remove("show");
     }, 100);
@@ -59,9 +61,7 @@ let announcement=document.getElementById("announcement")as HTMLImageElement;
         const menu = document.querySelector("#announcement_wrapper") as HTMLDivElement;
         // menu.style.display = "block";
           menu.classList.add("show_block");
-          const announcement_list = document.querySelector("#announcement_list")as HTMLDivElement;
-          announcement_list.classList.add("show");
-        
+          menu.setAttribute("open", "");        
       })
 function remvoveannouncementmenu(){
   setTimeout(() => {
@@ -69,6 +69,7 @@ function remvoveannouncementmenu(){
   // menu.style.display = "none";
   announcement.style.filter ="none";
     menu.classList.remove("show_block");
+    menu.removeAttribute("open");
     const announcement_list = document.querySelector("#announcement_list")as HTMLDivElement;
     announcement_list.classList.remove("show");
   }, 400);
