@@ -44,22 +44,37 @@
                 </div>
                 <ul class="others">
                     <li>
-                        <div class="alert-group" current-count="1">
-                            <img src="icons/alerts.svg">
+                        <div class="alert-group" id="alert-group" current-count="1">
+                            <div><img src="icons/alerts.svg" id="alert-image"></div>
+                            
                         </div>
                     </li>
                     <li>
                         <div class="anouncement-group" current-count="1">
-                            <img src="icons/announcements.svg">
+                            <div><img src="icons/announcements.svg" id="announcement"></div>
                         </div>
                     </li>    
                     <li>
                         <div class="profile-group" current-badge="T">
-                            <img src="icons/user.png">
+                            <div><img src="icons/user.png"></div>
                         </div>
                     </li>
                 </ul>
             </nav>
+            <div class="alert_wrapper" id="alert_wrapper">
+                <div class="alert_list" id="alert_list">
+
+                </div>
+                <div class="btn" >SHOW ALL</div>
+            </div>
+            <div class="announcement_wrapper" id="announcement_wrapper">
+                <div class="announcement_list" id="announcement_list">
+
+                </div>
+                <div class="announcement_btn" >
+                <span>SHOW ALL</span>&nbsp;|&nbsp;<span>CREATE NEW</span>
+                </div>
+            </div>
     </div>
 
     <div class="main-body">

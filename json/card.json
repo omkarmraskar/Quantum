@@ -19,7 +19,8 @@
                     "preview_icon": "icons/preview.svg",
                     "manage_course": "icons/manage course.svg",
                     "grade_submission":"icons/grade submissions.svg",
-                    "report":"icons/reports.svg"
+                    "report":"icons/reports.svg",
+                    "isDisabled": [false, false, false, false]
                 },
                 {
                     "image": "images/imageMask-1.png",
@@ -39,7 +40,8 @@
                     "preview_icon": "icons/preview.svg",
                     "manage_course": "icons/manage course.svg",
                     "grade_submission":"icons/grade submissions.svg",
-                    "report":"icons/reports.svg"
+                    "report":"icons/reports.svg",
+                    "isDisabled": [false, true, true, false]
                 },
                 {
                     "image": "images/imageMask-3.png",
@@ -59,7 +61,8 @@
                     "preview_icon": "icons/preview.svg",
                     "manage_course": "icons/manage course.svg",
                     "grade_submission":"icons/grade submissions.svg",
-                    "report":"icons/reports.svg"
+                    "report":"icons/reports.svg",
+                    "isDisabled": [false, true, true, false]
                 },
                 {
                     "expired": true,
@@ -80,7 +83,8 @@
                     "preview_icon": "icons/preview.svg",
                     "manage_course": "icons/manage course.svg",
                     "grade_submission":"icons/grade submissions.svg",
-                    "report":"icons/reports.svg"
+                    "report":"icons/reports.svg",
+                    "isDisabled": [false, false, false, false]
                 }
             ],
     "AlertArray": [

@@ -15,7 +15,6 @@ fetch('json/card.json').then(function(response){
     let i=0;
     for(let item of cont){
         i++;
-        // const item = cont[0];
         let card = document.createElement("div");
         let cardClass = `card-${i}`;
         card.classList.add(`${cardClass}`);
@@ -144,29 +143,166 @@ fetch('json/card.json').then(function(response){
                     let previewImg = document.createElement("img");
                     previewImg.setAttribute('src', `${item.preview_icon}`);
                     previewImg.setAttribute('id', `card-${i}-1`);
-                    // previewImg.setAttribute('onclick', 'changeOpacity(id)');
+                    if(item.isDisabled[0] == true){
+                        previewImg.classList.add("opacityChange");
+                    }
                     detailFooter.appendChild(previewImg);
 
                     let manageCourse = document.createElement("img");
                     manageCourse.setAttribute('src', `${item.manage_course}`);
                     manageCourse.setAttribute('id', `card-${i}-2`);
-                    // manageCourse.setAttribute('onclick', 'changeOpacity(id)');
+                    if(item.isDisabled[1] == true){
+                        manageCourse.classList.add("opacityChange");
+                    }
+                    
                     detailFooter.appendChild(manageCourse);
 
                     let grade = document.createElement("img");
                     grade.setAttribute('src', `${item.grade_submission}`);
                     grade.setAttribute('id', `card-${i}-3`);
-                    // grade.setAttribute('onclick', 'changeOpacity(id)');
+                    if(item.isDisabled[2] == true){
+                        grade.classList.add("opacityChange");
+                    }
+                    
                     detailFooter.appendChild(grade);
 
                     let report = document.createElement("img");
                     report.setAttribute('src', `${item.report}`);
                     report.setAttribute('id', `card-${i}-4`);
-                    // report.setAttribute('onclick', 'changeOpacity(id)');
+                    if(item.isDisabled[3] == true){
+                        report.classList.add("opacityChange");
+                    }
+                    
                     detailFooter.appendChild(report);
                     card.appendChild(detailFooter);
             
                     }
+
+
+
+
+
+    let alert_objects = obj.AlertArray;
+    var alertContainer = document.getElementById("alert_list") as HTMLDivElement;
+    for(let alert of alert_objects){
+        const li = document.createElement("li");
+        li.classList.add("alert_list_item");
+      
+        const msgdiv = document.createElement("div") as HTMLDivElement;
+        msgdiv.classList.add("msg");
+        li.appendChild(msgdiv);
+      
+        const p = document.createElement("p") as HTMLParagraphElement;
+        p.innerHTML = alert.msg;
+        msgdiv.appendChild(p);
+      
+        const img = document.createElement("img");
+        if(alert.isNewAlert){
+        img.src = "./icons/alerts.svg";
+        li.style.backgroundColor="#FFFFEE";
+        }
+        else{
+          img.src = "./icons/checkbox-checked.svg";
+          img.setAttribute("id", "checkbox");
+        }
+        msgdiv.appendChild(img);
+        if(alert.course!=""){
+            const courseclassdiv = document.createElement("div");
+            courseclassdiv.classList.add("class_course_alert");
+            li.appendChild(courseclassdiv);
+        
+            const course_title = document.createElement("span");
+            course_title.classList.add("class_or_course");
+            course_title.classList.add("faded");
+            course_title.innerHTML="Course: ";
+            courseclassdiv.appendChild(course_title);
+        
+            const course_name = document.createElement("span");
+            course_name.classList.add("class_course_name");
+            course_name.innerHTML=alert.course;
+            courseclassdiv.appendChild(course_name);
+        }
+      
+        const date_time = document.createElement("span");
+        date_time.classList.add("date-time");
+        date_time.classList.add("faded");
+        date_time.innerHTML = alert.date_time;
+      
+        li.appendChild(date_time);
+        alertContainer.appendChild(li);
+      }
+
+      let announcement_objects = obj.AnnouncementArray;
+      var announcement_list = document.getElementById("announcement_list") as HTMLDivElement;
+      for(const announcement of announcement_objects){
+        const li=document.createElement("li");
+        li.classList.add("announcement_list_item");
+        announcement_list.appendChild(li);
+      
+        const pa_header=document.createElement("div");
+        pa_header.classList.add("pa_header");
+        li.appendChild(pa_header);
+      
+        const header_p = document.createElement("p");
+        pa_header.appendChild(header_p);
+      
+        const pa_title=document.createElement("span");
+        pa_title.classList.add("pa_title");
+        pa_title.innerHTML="PA: ";
+        header_p.appendChild(pa_title);
+      
+        const pa_name=document.createElement("span");
+        pa_name.classList.add("pa_name");
+        pa_name.innerHTML= announcement.pa_name;
+        header_p.appendChild(pa_name);
+      
+        const img=document.createElement("img");
+        img.src="./icons/checkbox-checked.svg";
+        pa_header.appendChild(img);
+      
+        const pa_msg=document.createElement("p");
+        pa_msg.classList.add("pa_msg");
+        pa_msg.innerHTML= announcement.msg;
+        li.appendChild(pa_msg);
+        
+        const coursename=document.createElement("div");
+        coursename.classList.add("class_course_announcement");
+        li.appendChild(coursename);
+      
+        const course=document.createElement("span");
+        course.classList.add("class_or_course");
+        course.innerHTML="Course: "
+        coursename.appendChild(course);
+      
+        const course_title=document.createElement("span");
+        course_title.classList.add("class_course_name");
+        course_title.innerHTML = announcement.course;
+        coursename.appendChild(course_title);
+      
+        const pa_footer=document.createElement("div");
+        pa_footer.classList.add("pa_footer");
+        li.appendChild(pa_footer);
+      
+        const attachedfile=document.createElement("div");
+        attachedfile.classList.add("attachedfile");
+        pa_footer.appendChild(attachedfile);
+      
+        const attachimg=document.createElement("img");
+        attachimg.src="./icons/file_attach.png";
+        attachedfile.appendChild(attachimg);
+      
+        const no_of_file_attached=document.createElement("span");
+        no_of_file_attached.innerHTML= announcement.no_of_file_attached+" Files Atteched";
+        attachedfile.appendChild(no_of_file_attached);
+      
+      
+        const date_time=document.createElement("span");
+        date_time.classList.add("announcement_date_time");
+        date_time.innerHTML=announcement.date_time;
+        pa_footer.appendChild(date_time);
+      
+      
+      }
     });
 
 export{};
