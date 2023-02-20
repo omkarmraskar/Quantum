@@ -114,6 +114,9 @@ fetch('json/card.json').then(function(response){
                             let option = document.createElement("option");
                             option.setAttribute('value', `${item.option[j]}`);
                             option.innerHTML = `${item.option[j]}`;
+                            if(j == item.isSelected){
+                                option.setAttribute("selected", "");
+                            }
                             selectTeacher.appendChild(option);
                         }
                         teacher.appendChild(selectTeacher);

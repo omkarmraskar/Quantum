@@ -94,6 +94,9 @@ fetch('json/card.json').then(function (response) {
             var option = document.createElement("option");
             option.setAttribute('value', "".concat(item.option[j]));
             option.innerHTML = "".concat(item.option[j]);
+            if (j == item.isSelected) {
+                option.setAttribute("selected", "");
+            }
             selectTeacher.appendChild(option);
         }
         teacher.appendChild(selectTeacher);

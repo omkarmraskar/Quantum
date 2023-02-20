@@ -39,8 +39,6 @@ function removealertmenu(){
         alert.style.filter ="none";
         menu.classList.remove("show_block");
         menu.removeAttribute("open");
-        const alert_list = document.querySelector("#alert-list")as HTMLDivElement;
-        alert_list.classList.remove("show");
     }, 100);
 }
 
@@ -70,8 +68,6 @@ function remvoveannouncementmenu(){
   announcement.style.filter ="none";
     menu.classList.remove("show_block");
     menu.removeAttribute("open");
-    const announcement_list = document.querySelector("#announcement_list")as HTMLDivElement;
-    announcement_list.classList.remove("show");
   }, 400);
   
 }

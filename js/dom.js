@@ -6,7 +6,6 @@ hamburger.addEventListener("mouseover", function () {
     toogle.classList.add("open");
     var menu = document.querySelector(".nav-items");
     menu.classList.add("show");
-    menu.setAttribute("open", "");
 });
 var removemenu;
 var hamburgerOut = document.getElementById("hamburger-menu");
@@ -16,7 +15,6 @@ hamburger.addEventListener("click", function () {
         toogle.classList.add("open");
         var menu = document.querySelector(".nav-items");
         menu.classList.remove("show");
-        menu.removeAttribute("open");
     }, 400);
 });
 clearTimeout(removemenu);
@@ -35,8 +33,6 @@ function removealertmenu() {
         alert.style.filter = "none";
         menu.classList.remove("show_block");
         menu.removeAttribute("open");
-        var alert_list = document.querySelector("#alert-list");
-        alert_list.classList.remove("show");
     }, 100);
 }
 var alert_wrapper = document.getElementById("alert_wrapper");
@@ -63,8 +59,6 @@ function remvoveannouncementmenu() {
         announcement.style.filter = "none";
         menu.classList.remove("show_block");
         menu.removeAttribute("open");
-        var announcement_list = document.querySelector("#announcement_list");
-        announcement_list.classList.remove("show");
     }, 400);
 }
 // announcement.addEventListener("click",remvoveannouncementmenu);
